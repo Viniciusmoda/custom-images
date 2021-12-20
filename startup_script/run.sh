@@ -88,6 +88,7 @@ function cleanup() {
 }
 
 function main() {
+  echo "BRANCH vulnerabilidade_dataproc_1051"
   wait_until_ready
 
   if [[ "${ready}" == "true" ]]; then
