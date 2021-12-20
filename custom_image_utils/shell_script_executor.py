@@ -39,14 +39,14 @@ def run(shell_script):
       stderr=sys.stderr
   )
   for line in iter(pipe.stdout.readline, b''):
-   if not line:
-    print(line)
-    pipe.stdout.close()
-    pipe.wait()
-  #   if pipe.returncode != 0:
-  #     raise RuntimeError("Error building custom image.")
-  # finally:
-  #   try:
+    if not line:
+        print(line)
+        pipe.stdout.close()
+        pipe.wait()
+      #   if pipe.returncode != 0:
+      #     raise RuntimeError("Error building custom image.")
+      # finally:
+      #   try:
     os.remove(temp_file.name)
     # except OSError:
     #   pass
