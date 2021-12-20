@@ -38,10 +38,10 @@ def run(shell_script):
         stdout=sys.stdout,
         stderr=sys.stderr
     )
-    #for line in iter(pipe.stdout.readline, b''):
-    #  if not line:
-    #    print(line)
-    #pipe.stdout.close()
+    for line in iter(pipe.stdout.readline, b''):
+     if not line:
+       print(line)
+    pipe.stdout.close()
     pipe.wait()
     if pipe.returncode != 0:
       raise RuntimeError("Error building custom image.")
